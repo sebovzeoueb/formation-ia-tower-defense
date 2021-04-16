@@ -29,10 +29,10 @@ func _unhandled_input(event):
 		if event.button_index == BUTTON_LEFT && event.pressed && towers.size():
 			var cost = towers[tower_index].cost
 			if cost > money: return
-			money_set(money - cost)
 			var new_tower = towers[tower_index].scene.instance()
 			new_tower.menu_index = tower_index
-			world.add_entity(new_tower, event.position)
+			var entity = world.add_entity(new_tower, event.position)
+			if entity: money_set(money - cost)
 		if event.button_index == BUTTON_RIGHT && event.pressed:
 			var tile_pos = world.tile_map.world_to_map(event.position)
 			if tile_pos.x > 0 && tile_pos.x < world.width && tile_pos.y > 0 && tile_pos.y < world.height && world.entities[tile_pos.x][tile_pos.y]:

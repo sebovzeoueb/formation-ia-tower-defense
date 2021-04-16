@@ -138,6 +138,7 @@ func add_entity(entity, pos):
 	entity.position = Vector2(tile_pos.x * tile_map.cell_size.x, tile_pos.y * tile_map.cell_size.y)
 	entity.z_index = tile_pos.y
 	emit_signal("on_change")
+	return entity
 	
 # enlever une entité des systèmes "world"
 func remove_entity(entity):
