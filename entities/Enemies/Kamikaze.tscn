@@ -12,7 +12,7 @@ collision_layer = 2147483652
 collision_mask = 2
 script = ExtResource( 2 )
 speed = 20.0
-hitpoints = 100.0
+hitpoints = 25.0
 damage_points = 25.0
 dijkstra = "distance_to_tower"
 

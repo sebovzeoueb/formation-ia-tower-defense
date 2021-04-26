@@ -32,10 +32,9 @@ func _process(delta):
 		
 		if position == destination:
 			for tower in world.entity_tab: 
-				print(tower)
-				if tower && tower.position == Vector2(target.destinations[0].x, target.destinations[0].y): 
-					give_damage(tower.tower)
-
+				if tower && target && target.destinations.size() > 0:
+					if tower.position == Vector2(target.destinations[0].x, target.destinations[0].y): 
+						give_damage(tower.tower)
 		
 func take_damage(amount):
 	hitpoints -= amount
